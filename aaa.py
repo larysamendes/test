@@ -41,17 +41,25 @@ class BancoTestSquare(unittest.TestCase):
     def test_saque(self):
         
         expected = 70
+        expected1 = 100
 
         self.conta1.Saque(30)
         self.assertEqual(self.conta1.saldo, expected)
+        # Primeiro teste roda normalmente, já o segundo o resultado vai ser diferente
+        self.assertEqual(self.conta1.saldo, expected1)
 
 
     def test_depositar(self):
         
         expected = 80
+        expected1 = 90
         
         self.conta2.deposito(30)
         self.assertEqual(self.conta2.saldo, expected)
+        # Primeiro teste roda normalmente, já o segundo o resultado vai ser diferente
+        self.assertEqual(self.conta2.saldo, expected1)
+
+
     
     def test_transferencia(self):
         expected1 = 50
